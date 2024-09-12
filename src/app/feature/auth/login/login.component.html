@@ -1,0 +1,98 @@
+<section  class="page-head-section">
+      <div  class="container page-heading">
+        <h2
+          
+          class="h3 mb-3 text-white text-center ng-star-inserted"
+        >
+          Login
+        </h2>
+        <!---->
+        <nav  aria-label="breadcrumb">
+          <ol
+            
+            class="breadcrumb flex-lg-nowrap justify-content-center justify-content-lg-star"
+          >
+            <li
+              
+              class="breadcrumb-item ng-star-inserted"
+            >
+              <a  href="/zomo/home/classic"
+                ><i  class="ri-home-line"></i>Home</a
+              >
+            </li>
+            <!---->
+            <li
+              
+              aria-current="page"
+              class="breadcrumb-item active ng-star-inserted"
+            >
+              Login
+            </li>
+            <!---->
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+  <section
+    
+    class="login-hero-section section-b-space"
+  >
+    <div  class="container">
+      <div  class="row">
+        <div
+          
+          class="col-xl-5 col-lg-6 col-md-10 m-auto"
+        >
+          <div  class="login-data">
+            <form [formGroup]="loginForm" (ngSubmit)="login()"
+              class="auth-form ng-untouched ng-pristine ng-invalid"
+            >
+              <h2 >Sign in</h2>
+              <h5 >
+                or
+                <a routerLink="register"
+                  ><span  class="theme-color"
+                    >create an a account</span
+                  ></a
+                >
+              </h5>
+              <div  class="form-input">
+                <input
+                  
+                  type="tel"
+                  placeholder="Enter your email"
+                  formControlName="email"
+                  class="form-control ng-untouched ng-pristine ng-invalid"
+                /><i  class="ri-mail-line"></i>
+              </div>
+              <div  class="form-input">
+                <input
+                  
+                  type="password"
+                  placeholder="Enter your password"
+                  formControlName="password"
+                  class="form-control ng-untouched ng-pristine ng-valid"
+                /><i
+                  
+                  class="ri-lock-password-line"
+                ></i>
+              </div>
+              <button
+                type="submit"
+                class="btn theme-btn submit-btn w-100 rounded-2"
+                
+                >Log-in</button>
+              
+              <p  class="fw-normal content-color">
+                By creating an account, I accept the
+                <span  class="fw-semibold">
+                  Terms &amp; Conditions &amp; Privacy Policy</span
+                >
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,243 @@
+<header>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg p-0">
+        <button type="button" class="navbar-toggler">
+          <span class="navbar-toggler-icon"><i class="ri-menu-line"></i></span>
+        </button>
+        <div class="d-flex align-items-center gap-1">
+          <a routerLink="home"
+            ><img
+              alt="logo"
+              class="img-fluid logo"
+              src="assets/images/svg/A.svg"
+            /><!----><!----></a
+          ><!----><a
+            href="javascript:void(0);"
+            class="btn btn-sm theme-btn location-btn mt-0 ms-3 d-flex align-content-center gap-1"
+            ><i class="ri-map-pin-line"></i>
+            {{'Location'|translate}}
+          </a>
+        </div>
+        
+        <div class="nav-option order-md-2">
+          <div class="dropdown-button">
+            <div class="cart-button">
+              <span>0</span
+              ><i class="ri-shopping-cart-line text-white cart-bag"></i
+              ><!----><!---->
+            </div>
+            <div class="onhover-box">
+              <ul class="cart-list">
+                <li class="product-box-contain">
+                  <div class="drop-cart">
+                    <a href="javascript:void(0);" class="drop-image"
+                      ><img
+                        alt=""
+                        class="blur-up lazyloaded"
+                        src="assets/images/product/vp-3.png"
+                    /></a>
+                    <div class="drop-contain">
+                      <a href="javascript:void(0);"><h5>Egg Sandwich</h5></a>
+                      <h6>
+                        <span>1 x </span>
+                        $80.58
+                      </h6>
+                      <button class="close-button close_button">
+                        <i class="fa-solid fa-xmark"></i>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="product-box-contain">
+                  <div class="drop-cart">
+                    <a href="javascript:void(0);" class="drop-image"
+                      ><img
+                        alt=""
+                        class="blur-up lazyloaded"
+                        src="assets/images/product/vp-2.png"
+                    /></a>
+                    <div class="drop-contain">
+                      <a href="javascript:void(0);"
+                        ><h5>Grilled Chicken Quesadilla</h5></a
+                      >
+                      <h6>
+                        <span>1 x </span>
+                        $25.64
+                      </h6>
+                      <button class="close-button close_button">
+                        <i class="fa-solid fa-xmark"></i>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="product-box-contain">
+                  <div class="drop-cart">
+                    <a href="javascript:void(0);" class="drop-image"
+                      ><img
+                        alt=""
+                        class="blur-up lazyloaded"
+                        src="assets/images/product/vp-4.png"
+                    /></a>
+                    <div class="drop-contain">
+                      <a href="javascript:void(0);"><h5>Spicy Ahi Roll</h5></a>
+                      <h6>
+                        <span>1 x </span>
+                        $12.00
+                      </h6>
+                      <button class="close-button close_button">
+                        <i class="fa-solid fa-xmark"></i>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="product-box-contain">
+                  <div class="drop-cart">
+                    <a href="javascript:void(0);" class="drop-image"
+                      ><img
+                        alt=""
+                        class="blur-up lazyloaded"
+                        src="assets/images/product/vp-5.png"
+                    /></a>
+                    <div class="drop-contain">
+                      <a href="javascript:void(0);"><h5>Spicy Dumplings</h5></a>
+                      <h6>
+                        <span>1 x </span>
+                        $16.28
+                      </h6>
+                      <button class="close-button close_button">
+                        <i class="fa-solid fa-xmark"></i>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="product-box-contain">
+                  <div class="drop-cart">
+                    <a href="javascript:void(0);" class="drop-image"
+                      ><img
+                        alt=""
+                        class="blur-up lazyloaded"
+                        src="assets/images/product/vp-6.png"
+                    /></a>
+                    <div class="drop-contain">
+                      <a href="javascript:void(0);"><h5>Chicken Nugget</h5></a>
+                      <h6>
+                        <span>1 x </span>
+                        $20.50
+                      </h6>
+                      <button class="close-button close_button">
+                        <i class="fa-solid fa-xmark"></i>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <!---->
+              </ul>
+              <div class="price-box">
+                <h5>Total :</h5>
+                <h4 class="theme-color fw-semibold">$155.00</h4>
+              </div>
+              <div class="button-group">
+                <a
+                  class="btn btn-sm theme-btn w-100 d-block rounded-2"
+                  href="/zomo/order/checkout"
+                  >View Cart</a
+                >
+              </div>
+            </div>
+          </div>
+  
+          <div class="btn-group" *ngIf="currentUser === null">
+            <div class="form-group">
+              <a class="btn btn-sm theme-btn location-btn d-flex align-content-center gap-1" routerLink="login">Login</a>
+            </div>
+            <div class="form-group">
+              <a class="btn btn-sm theme-btn location-btn mx-1  d-flex align-content-center gap-1" routerLink="register">Register</a>
+            </div>
+          </div>
+         
+      <!-- Dil Değiştirme Dropdown -->
+      <nav class="navbar">
+        <!-- Other navbar content -->
+      
+        <!-- Language Flags -->
+        <div class="language-flags">
+          <!-- Turkish Flag -->
+          <img
+            src="assets/images/tr.png"
+            alt="TR"
+            class="flag-icon"
+            (click)="changeLanguage('tr')"
+          />
+      
+          <!-- English Flag -->
+          <img
+            src="assets/images/us.png"
+            alt="EN"
+            class="flag-icon"
+            (click)="changeLanguage('en')"
+          />
+        </div>
+      </nav>
+      
+      
+          <!-- User Info -->
+          <div class="profile-part dropdown-button order-md-2" *ngIf="currentUser">
+            <div class="profile-part dropdown-button order-md-2">
+              <img
+                [src]="getUserImage(currentUser.profileImage)"
+                alt="profile"
+                class="img-fluid profile-pic"
+              />
+              
+              <div>
+                <h6 class="fw-normal">{{'Hi'|translate}}, {{currentUser.firstName | uppercase}} {{currentUser.lastName | uppercase}}</h6>
+                <h5 class="fw-medium">{{'My Account' | translate}}</h5>
+              </div>
+              <div class="onhover-box onhover-sm">
+                <ul class="menu-list">
+                  <li>
+                    <a class="dropdown-item" href="/zomo/account/change-profile"
+                      >{{'Profile' | translate}}</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/zomo/account/my-order"
+                      >{{'My orders' | translate}}</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/zomo/account/saved-address"
+                      >{{'Saved Address' | translate}}</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/zomo/account/saved-card"
+                      >{{'Saved cards' | translate}}</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/zomo/account/settings"
+                      >{{'Settings'| translate}}</a
+                    >
+                  </li>
+                </ul>
+                <div class="bottom-btn">
+                  <a class="theme-color fw-medium" (click)="logout()"
+                    ><i class="ri-login-box-line me-2"></i>{{'Logout' | translate}}</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          
+        </div>
+        <div class="offcanvas offcanvas-end">
+          <div class="offcanvas-header">
+            <h5 id="offcanvasNavbarLabel" class="offcanvas-title">Menu</h5>
+            <button type="button" class="navbar-toggler btn-close"></button>
+          </div>
+        </div>
+      </nav>
+    </div>
+</header>

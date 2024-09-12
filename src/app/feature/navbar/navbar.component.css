@@ -1,0 +1,10 @@
+.language-flags {
+  display: flex;
+  align-items: center;
+}
+
+.flag-icon {
+  width: 30px;       /* Size of the flag */
+  margin: 0 10px;    /* Spacing between flags */
+  cursor: pointer;   /* Cursor change to pointer */
+}

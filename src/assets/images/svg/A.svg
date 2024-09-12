@@ -1,0 +1,6 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" width="500" height="100">
+    <title>MUSTFOOD</title>
+    <!-- Background rect removed for transparency -->
+    <text x="50" y="70" font-family="Arial" font-weight="bold" font-size="78" fill="#ffffff">MUSTFOOD</text>
+    <circle cx="470" cy="70" r="6" fill="#f28d35" />
+</svg>

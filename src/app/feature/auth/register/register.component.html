@@ -1,0 +1,89 @@
+
+
+<section class="login-hero-section section-b-space">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5 col-lg-6 col-md-10 m-auto">
+        <div class="login-data">
+
+          <form [formGroup]="registerForm" (ngSubmit)="register()" class="auth-form" enctype="multipart/form-data">
+            <h2>Sign-up</h2>
+            <h5>
+              or
+              <a routerLink="login"
+                ><span class="theme-color">Login</span></a
+              >
+            </h5>
+            <div class="form-input">
+              <input
+                type="text"
+                placeholder="Enter your first name"
+                formControlName="firstName"
+                class="form-control"
+              /><i class="ri-user-3-line"></i>
+            </div>
+            <div class="form-input">
+              <input
+                type="text"
+                placeholder="Enter your last name"
+                formControlName="lastName"
+                class="form-control"
+              /><i class="ri-user-3-line"></i>
+            </div>
+            <div class="form-input">
+              <input
+                type="text"
+                placeholder="Enter your username"
+                formControlName="username"
+                class="form-control"
+              /><i class="ri-user-3-line"></i>
+            </div>
+            <div class="form-input">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                formControlName="email"
+                class="form-control"
+              /><i class="ri-mail-line"></i>
+            </div>
+            <div class="form-input">
+              <input
+                type="file"
+                (change)="selectFile($event)"
+                formControlName="profileImage"
+                class="form-control"
+              /><i class="bi-image-fill"></i>
+            </div>
+            <div class="form-input">
+              <input
+                type="tel"
+                placeholder="Enter your number"
+                formControlName="phoneNumber"
+                class="form-control"
+              /><i class="ri-phone-line"></i>
+            </div>
+            <div class="form-input">
+              <input
+                type="password"
+                placeholder="Enter your password"
+                formControlName="password"
+                class="form-control"
+              /><i class="ri-lock-password-line"></i>
+            </div>
+            <button
+              class="btn theme-btn submit-btn w-100 rounded-2"
+              type="submit"
+              >Sign-Up</button
+            >
+            <p class="fw-normal content-color">
+              By creating an account, I accept the
+              <span class="fw-semibold">
+                Terms &amp; Conditions &amp; Privacy Policy</span
+              >
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

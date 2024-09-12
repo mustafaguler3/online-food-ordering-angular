@@ -13,6 +13,7 @@ import { MessageService } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { UserDashboardComponent } from './auth/user-dashboard/user-dashboard.component';
 
 
 // A function that tells where to load translation files
@@ -26,7 +27,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     NavbarComponent,
     HeaderComponent,
     FooderComponent,
-    HomeComponent
+    HomeComponent,
+    UserDashboardComponent
   ],
   imports: [
     CommonModule,

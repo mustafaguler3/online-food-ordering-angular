@@ -59017,7 +59017,7 @@ textarea.form-control-lg {
 
 [dir=ltr] .page-head-section:before {
     content: "";
-    /* background-image: url("./media/home-bg-ZTUNOW43.jpg"); */
+    background-image: url("./assets/images/media/home-bg-ZTUNOW43.jpg");
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -59060,11 +59060,11 @@ textarea.form-control-lg {
     color: #ffffff6b
 }
 
-[dir=ltr] .page-head-section .page-heading.page-heading2 {
+ .page-head-section .page-heading.page-heading2 {
     padding: calc(20px + 55 * (100vw - 320px) / 1600) 0
 }
 
-[dir=ltr] .page-head-section .page-heading h2 {
+.page-head-section .page-heading h2 {
     font-size: calc(20px + .01*(100vw - 320px));
     color: rgba(var(--white),1);
     margin-top: -7px
@@ -67554,15 +67554,16 @@ textarea.form-control-lg {
     z-index: 1
 }
 
-[dir=ltr] .profile-section .profile-sidebar .profile-cover {
+ .profile-section .profile-sidebar .profile-cover {
     position: relative;
     width: 100%;
     height: 150px;
     background: linear-gradient(333.77deg,#ff8d2f 9.66%,#ffd3b0 101.81%);
+    
     border-radius: 10px 10px 0 0
 }
 
-[dir=ltr] .profile-section .profile-sidebar .profile-cover .profile-pic {
+ .profile-section .profile-sidebar .profile-cover .profile-pic {
     position: absolute;
     bottom: -50px;
     left: 50%;

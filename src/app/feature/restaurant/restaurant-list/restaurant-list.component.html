@@ -1,0 +1,65 @@
+<section class="restaurant-list section-b-space ratio3_2">
+    <div *ngIf="errors">
+        <h1 class="test-danger">{{errors}}</h1>
+    </div>
+    <div class="container">
+      <div class="title restaurant-title w-border pb-0">
+        <h2>{{'Featured Restaurants' | translate}}</h2>
+        <div class="loader-line"></div>
+      </div>
+      <div id="TabContent" class="tab-content restaurant-content">
+        <div id="delivery-tab" class="tab-pane fade show active">
+          <div class="row g-lg-4 g-3">
+            
+
+            <div class="col-xl-3 col-lg-4 col-sm-6" *ngFor="let restaurant of restaurants">
+              <div class="vertical-product-box">
+                <div class="vertical-product-box-img">
+                  <a
+                    class="bg-size"
+                    routerLink="/restaurants/{{restaurant.id}}"
+                    [style.backgroundImage]="'url(' + getProductImage(restaurant.products[0].foodImageUrls[0]) + ')'"
+                    ><img
+                      alt="vp1"
+                      class="product-img-top w-100 bg-img"
+                      style="display: none"
+                      [src]="getProductImage(restaurant.products[0].foodImageUrls[0])" /></a
+                  >
+                </div>
+                <div class="vertical-product-body">
+                  <div
+                    class="d-flex align-items-center justify-content-between mt-sm-3 mt-2"
+                  >
+                    <a href="/zomo/order/menu-listing/take-it-cheesy"
+                      ><h4 class="vertical-product-title">{{restaurant.name}}</h4></a
+                    >
+                    <h6 class="rating-star">
+                      <span class="star"><i class="ri-star-s-fill"></i></span>{{restaurant.rating}}
+                    </h6>
+                  </div>
+                  <h5 class="product-items">{{restaurant.products[0].description}}</h5>
+                  <div
+                    class="location-distance d-flex align-items-center justify-content-between pt-sm-3 pt-2"
+                  >
+                    <h5 class="place">{{restaurant.location}}</h5>
+                    <ul class="distance">
+                      <li>
+                        <i class="ri-map-pin-fill icon"></i>
+                        {{restaurant.distance}} km
+                      </li>
+                      <li>
+                        <i class="ri-time-fill icon"></i>
+                        {{restaurant.deliveryTime}} min
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

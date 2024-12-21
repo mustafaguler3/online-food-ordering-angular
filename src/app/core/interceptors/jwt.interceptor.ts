@@ -14,7 +14,7 @@ export class JwtInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     
-    let token = localStorage.getItem("currentUser")
+    let token = localStorage.getItem("accessToken")
 
     if(token){
       request = request.clone({

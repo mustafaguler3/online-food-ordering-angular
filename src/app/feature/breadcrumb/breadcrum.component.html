@@ -1,0 +1,25 @@
+<ng-container *ngIf="$any(breadcrumbService.breadcrumb$ | async) as breadcrumbs">
+  <section class="py-5" style="background-color: transparent;">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-9">
+          <h1>{{breadcrumbs[breadcrumbs.length-1].label | titlecase}}</h1>
+        </div>
+  
+        <div class="col-3">
+          <div class="card flex justify-content-center">
+      
+            <xng-breadcrumb>
+              <ng-container *xngBreadcrumbItem="let breadcrumb">
+                {{breadcrumb | titlecase}}
+              </ng-container>
+            </xng-breadcrumb>
+              
+            
+  
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+</ng-container>

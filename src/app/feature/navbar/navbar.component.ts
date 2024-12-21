@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -10,9 +11,11 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class NavbarComponent implements OnInit{
 
-  currentUser:any
+  currentUser: any
   isDropdownOpen = false;
   currentLangs:any
+
+  private userSubscription!: Subscription;
 
   constructor(private authService: AuthService,
               private router: Router,
@@ -20,8 +23,6 @@ export class NavbarComponent implements OnInit{
   ){
     translate.addLangs(['en', 'tr']); // Kullanılabilir diller
     translate.setDefaultLang('en'); // Varsayılan dil
-    this.currentUser = this.authService.getUserValue()
-
     this.currentLangs = this.translate.currentLang
   }
   toggleDropdown() {
@@ -33,6 +34,9 @@ export class NavbarComponent implements OnInit{
     this.isDropdownOpen = false; // Seçim sonrası dropdown'ı kapatır
   }
   ngOnInit(): void {
+    this.userSubscription = this.authService.currentUser.subscribe((user) => {
+      this.currentUser = user
+    })
   }
 
   logout(){

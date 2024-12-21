@@ -4,7 +4,7 @@
 }
 
 .flag-icon {
-  width: 30px;       /* Size of the flag */
-  margin: 0 10px;    /* Spacing between flags */
-  cursor: pointer;   /* Cursor change to pointer */
+  width: 30px;       
+  margin: 0 10px;    
+  cursor: pointer;   
 }

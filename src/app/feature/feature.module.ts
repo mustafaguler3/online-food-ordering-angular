@@ -14,9 +14,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UserDashboardComponent } from './auth/user-dashboard/user-dashboard.component';
+import { BreadcrumbComponent, BreadcrumbItemDirective } from 'xng-breadcrumb';
+import { BreadcrumComponent } from "./breadcrumb/breadcrum.component";
+import { ProductListComponent } from './products/product-list/product-list.component';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
+import { RestaurantListComponent } from './restaurant/restaurant-list/restaurant-list.component'
 
-
-// A function that tells where to load translation files
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -28,7 +31,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeaderComponent,
     FooderComponent,
     HomeComponent,
-    UserDashboardComponent
+    BreadcrumComponent,
+    UserDashboardComponent,
+    ProductListComponent,
+    ProductDetailComponent,
+    RestaurantListComponent
   ],
   imports: [
     CommonModule,
@@ -42,9 +49,12 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    BreadcrumbComponent,
+    BreadcrumbItemDirective
+    
   ],
   providers:[MessageService],
-  exports: [NavbarComponent,HeaderComponent,FooderComponent]
+  exports: [NavbarComponent,HeaderComponent,FooderComponent,BreadcrumComponent]
 })
 export class FeatureModule { }

@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit{
 
   loginForm: any
 
-
   constructor(private fb: FormBuilder,
               private authService: AuthService,
               private toastService: ToastService,
@@ -27,10 +26,25 @@ export class LoginComponent implements OnInit{
       })
   }
 
+  // JWT'yi decode eden bir metod (örnek)
+decodeToken(token: string): any {
+  try {
+    return JSON.parse(atob(token.split('.')[1]));
+  } catch (error) {
+    console.error('Token decoding failed:', error);
+    return null;
+  }
+}
+
   login(){
     this.authService.login(this.loginForm.value).subscribe({
       next: (response) => {
-        console.log("Response -> "+response)
+        localStorage.setItem('accessToken', response.accessToken);
+        localStorage.setItem('refreshToken', response.refreshToken);
+        
+        const decodedUser = this.decodeToken(response.accessToken);
+        this.authService.setCurrentUser(decodedUser);
+
         this.toastService.showSuccess("Success","Login success fully")
         this.route.navigateByUrl("home")
       },

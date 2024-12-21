@@ -3,5 +3,6 @@ export interface MyJwtPayload {
     firstName: any
     lastName:any
     profileImage: any
+    phoneNumber:any
     email: any
 }

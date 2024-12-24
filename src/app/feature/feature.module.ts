@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { FooderComponent } from './fooder/fooder.component';
@@ -28,49 +28,43 @@ import { CartItemComponent } from './cart/cart-item/cart-item.component';
 import { AddressFormComponent } from './address/address-form/address-form.component';
 import { PaymentFormComponent } from './payment/payment-form/payment-form.component';
 import { Dialog } from 'primeng/dialog';
-@NgModule({
-  declarations: [
-    LoginComponent,
-    RegisterComponent,
-    NavbarComponent,
-    HeaderComponent,
-    FooderComponent,
-    HomeComponent,
-    BreadcrumComponent,
-    ProfileComponent,
-    ProductListComponent,
-    ProductDetailComponent,
-    RestaurantListComponent,
-    ChangeProfileComponent,
-    SavedAddressComponent,
-    CartComponent,
-    OrderProcessComponent,
-    CartItemComponent,
-    AddressFormComponent,
-    PaymentFormComponent
-  ],
-  imports: [
-    FeatureRoutingModule,
-    CommonModule,
-    HttpClientModule,
-    RouterModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    }),
-    BreadcrumbComponent,
-    BreadcrumbItemDirective
-  ],
-  providers:[MessageService],
-  exports: [
-    NavbarComponent,
-    HeaderComponent,
-    FooderComponent,
-    BreadcrumComponent]
-})
+@NgModule({ declarations: [
+        LoginComponent,
+        RegisterComponent,
+        NavbarComponent,
+        HeaderComponent,
+        FooderComponent,
+        HomeComponent,
+        BreadcrumComponent,
+        ProfileComponent,
+        ProductListComponent,
+        ProductDetailComponent,
+        RestaurantListComponent,
+        ChangeProfileComponent,
+        SavedAddressComponent,
+        CartComponent,
+        OrderProcessComponent,
+        CartItemComponent,
+        AddressFormComponent,
+        PaymentFormComponent
+    ],
+    exports: [
+        NavbarComponent,
+        HeaderComponent,
+        FooderComponent,
+        BreadcrumComponent
+    ], imports: [FeatureRoutingModule,
+        CommonModule,
+        RouterModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        }),
+        BreadcrumbComponent,
+        BreadcrumbItemDirective], providers: [MessageService, provideHttpClient(withInterceptorsFromDi())] })
 export class FeatureModule { }

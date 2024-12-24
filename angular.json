@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "food-ordering:build:production"
+              "buildTarget": "food-ordering:build:production"
             },
             "development": {
-              "browserTarget": "food-ordering:build:development"
+              "buildTarget": "food-ordering:build:development"
             },
             "options": {
               "port": 4200
@@ -88,7 +88,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "food-ordering:build"
+            "buildTarget": "food-ordering:build"
           }
         },
         "test": {

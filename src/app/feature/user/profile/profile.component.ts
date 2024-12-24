@@ -1,19 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscriber, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { User } from 'src/app/shared/models/user';
+import { UserService } from '../services/user.service';
 
 @Component({
-  selector: 'app-user-dashboard',
-  templateUrl: './user-dashboard.component.html',
-  styleUrls: ['./user-dashboard.component.css']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
-export class UserDashboardComponent implements OnInit{
+export class ProfileComponent implements OnInit{
+
   currentUser:User
 
   private userSubs!: Subscription;
 
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService,
+              private userService: UserService
+  ){}
 
   ngOnInit(): void {
       this.userSubs = this.authService.currentUser.subscribe((user) => {
@@ -22,6 +26,6 @@ export class UserDashboardComponent implements OnInit{
   }
 
   userImage(image:any){
-    return this.authService.getProfileImage(image)
+    return this.userService.getProfileImage(image)
   }
 }

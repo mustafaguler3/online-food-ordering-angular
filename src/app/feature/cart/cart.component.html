@@ -1,0 +1,59 @@
+<section class="page-head-section">
+  <div class="container page-heading">
+    <h2 class="h3 mb-3 text-white text-center ng-star-inserted">Cart</h2>
+    <nav aria-label="breadcrumb">
+      <ol
+        class="breadcrumb flex-lg-nowrap justify-content-center justify-content-lg-star"
+      >
+        <li class="breadcrumb-item ng-star-inserted">
+          <a href="/zomo/home/classic"><i class="ri-home-line"></i>Home</a>
+        </li>
+        <li aria-current="page" class="breadcrumb-item active ng-star-inserted">
+          Cart
+        </li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<section class="account-section section-b-space pt-0">
+  <div class="container">
+    <div class="layout-sec">
+      <div class="row g-lg-4 g-4">
+        <div class="col-lg-8">
+
+          <app-order-process [currentStep]="currentStep"></app-order-process>
+
+          <app-address-form *ngIf="currentStep == 'address'"></app-address-form>
+
+          <app-payment-form *ngIf="currentStep == 'payment'"></app-payment-form>
+
+          <div class="account-part" *ngIf="!currentUser">
+            <img
+              src="../assets/images/account.svg"
+              alt="account"
+              class="img-fluid account-img"
+            />
+            <div class="title mb-0">
+              <div class="loader-line"></div>
+              <h3>Account</h3>
+              <p>
+                To place your order now, log in to in your existing account or
+                sign up
+              </p>
+              <div class="account-btn d-flex justify-content-center gap-2">
+                <a class="btn theme-outline mt-0" routerLink="login">SIGN IN</a
+                ><a class="btn theme-outline mt-0" routerLink="register"
+                  >SIGN UP</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <app-cart-item></app-cart-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

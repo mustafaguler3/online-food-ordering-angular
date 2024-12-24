@@ -12,17 +12,22 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { UserDashboardComponent } from './auth/user-dashboard/user-dashboard.component';
 import { BreadcrumbComponent, BreadcrumbItemDirective } from 'xng-breadcrumb';
 import { BreadcrumComponent } from "./breadcrumb/breadcrum.component";
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
-import { RestaurantListComponent } from './restaurant/restaurant-list/restaurant-list.component'
-
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
+import { RestaurantListComponent } from './restaurant/restaurant-list/restaurant-list.component';
+import { ProfileComponent } from './user/profile/profile.component'
+import { HttpLoaderFactory } from '../app.module';
+import { ChangeProfileComponent } from './user/change-profile/change-profile.component';
+import { FeatureRoutingModule } from './feature-routing.module';
+import { SavedAddressComponent } from './user/saved-address/saved-address.component';
+import { CartComponent } from './cart/cart.component';
+import { OrderProcessComponent } from './cart/order-process/order-process.component';
+import { CartItemComponent } from './cart/cart-item/cart-item.component';
+import { AddressFormComponent } from './address/address-form/address-form.component';
+import { PaymentFormComponent } from './payment/payment-form/payment-form.component';
+import { Dialog } from 'primeng/dialog';
 @NgModule({
   declarations: [
     LoginComponent,
@@ -32,12 +37,20 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooderComponent,
     HomeComponent,
     BreadcrumComponent,
-    UserDashboardComponent,
+    ProfileComponent,
     ProductListComponent,
     ProductDetailComponent,
-    RestaurantListComponent
+    RestaurantListComponent,
+    ChangeProfileComponent,
+    SavedAddressComponent,
+    CartComponent,
+    OrderProcessComponent,
+    CartItemComponent,
+    AddressFormComponent,
+    PaymentFormComponent
   ],
   imports: [
+    FeatureRoutingModule,
     CommonModule,
     HttpClientModule,
     RouterModule,
@@ -52,9 +65,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     BreadcrumbComponent,
     BreadcrumbItemDirective
-    
   ],
   providers:[MessageService],
-  exports: [NavbarComponent,HeaderComponent,FooderComponent,BreadcrumComponent]
+  exports: [
+    NavbarComponent,
+    HeaderComponent,
+    FooderComponent,
+    BreadcrumComponent]
 })
 export class FeatureModule { }

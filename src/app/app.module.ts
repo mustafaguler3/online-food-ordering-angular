@@ -38,7 +38,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,useClass: HttperrorInterceptor,multi:true},
-    {provide:HTTP_INTERCEPTORS,useClass:JwtInterceptor,multi:true}
+    {provide: HTTP_INTERCEPTORS,useClass:JwtInterceptor,multi:true}
   ],
   bootstrap: [AppComponent]
 })

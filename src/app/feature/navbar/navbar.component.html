@@ -22,8 +22,7 @@
         <div class="dropdown-button">
           <div class="cart-button">
             <span>0</span
-            ><i class="ri-shopping-cart-line text-white cart-bag"></i
-            ><!----><!---->
+            ><i routerLink="cart" class="ri-shopping-cart-line text-white cart-bag"></i>
           </div>
           <div class="onhover-box">
             <ul class="cart-list">
@@ -52,10 +51,11 @@
               <h5>Total :</h5>
               <h4 class="theme-color fw-semibold">$155.00</h4>
             </div>
+
             <div class="button-group">
               <a
                 class="btn btn-sm theme-btn w-100 d-block rounded-2"
-                href="/zomo/order/checkout"
+                routerLink="cart"
                 >View Cart</a
               >
             </div>
@@ -154,6 +154,8 @@
           </div>
         </div>
       </div>
+
+
       <div class="offcanvas offcanvas-end">
         <div class="offcanvas-header">
           <h5 id="offcanvasNavbarLabel" class="offcanvas-title">Menu</h5>

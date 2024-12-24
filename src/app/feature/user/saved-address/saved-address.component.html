@@ -1,0 +1,70 @@
+<div class="address-section bg-color h-100 mt-0">
+  <div class="title">
+    <div class="loader-line"></div>
+    <h3>Saved Address</h3>
+  </div>
+  <div class="row g-3">
+    <div class="col-md-6" *ngFor="let address of address">
+      <div class="address-box white-bg">
+        <div class="address-title">
+          <div class="d-flex align-items-center gap-2">
+            <i class="icon ri-home-4-fill"></i>
+            <h6>{{ address.type }}</h6>
+          </div>
+          <a class="edit-btn" (click)="openModal(addressModal)">Edit</a>
+        </div>
+        <div class="address-details">
+          <h6>{{ address.addressLine1 }}, {{ address.addressLine2 }}</h6>
+          <h6 class="phone-number">
+            {{ address.phone }}
+          </h6>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="address-box white-bg new-address-box white-bg">
+        <a class="btn new-address-btn theme-outline rounded-2 mt-0"
+          >Add New Address</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<ng-template #addressModal let-modal>
+  <div class="modal-header">
+    <h1 class="modal-title fs-5">Edit Address</h1>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="addressForm">
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input
+          id="firstName"
+          type="text"
+          class="form-control"
+          formControlName="first_name"
+          placeholder="Enter your first name"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input
+          id="lastName"
+          type="text"
+          class="form-control"
+          formControlName="last_name"
+          placeholder="Enter your last name"
+        />
+      </div>
+      <!-- Add other form fields as needed -->
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="submitForm()">Submit</button>
+  </div>
+</ng-template>

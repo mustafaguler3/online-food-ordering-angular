@@ -1,0 +1,19 @@
+<div class="process-section">
+  <ul class="process-list">
+    <li
+      *ngFor="let step of steps"
+      [class.active]="step.name === currentStep"
+    >
+      <a [routerLink]="step.route">
+        <div class="process-icon">
+          <img
+            [src]="'assets/images/svg/' + (step.name === currentStep ? step.icon.replace('.svg', '-active.svg') : step.icon)"
+            [alt]="step.name"
+            class="img-fluid icon"
+          />
+        </div>
+        <h6>{{ step.label }}</h6>
+      </a>
+    </li>
+  </ul>
+</div>

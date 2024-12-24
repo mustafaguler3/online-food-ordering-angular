@@ -1,3 +1,5 @@
+import { Address } from "./address.model"
+
 export interface User {
     id: number,
     firstName: string,
@@ -6,4 +8,5 @@ export interface User {
     email: string,
     password: number,
     phoneNumber: number
+    address: Address[]
 }

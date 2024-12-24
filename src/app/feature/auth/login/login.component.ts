@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit{
       })
   }
 
-  // JWT'yi decode eden bir metod (örnek)
 decodeToken(token: string): any {
   try {
     return JSON.parse(atob(token.split('.')[1]));

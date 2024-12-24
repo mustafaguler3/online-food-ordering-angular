@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { UserService } from '../user/services/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +12,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class NavbarComponent implements OnInit{
 
+  isLoggedIn : boolean = false;
   currentUser: any
   isDropdownOpen = false;
   currentLangs:any
@@ -19,11 +21,18 @@ export class NavbarComponent implements OnInit{
 
   constructor(private authService: AuthService,
               private router: Router,
-              public translate: TranslateService
+              public translate: TranslateService,
+              private userService: UserService
   ){
     translate.addLangs(['en', 'tr']); // Kullanılabilir diller
     translate.setDefaultLang('en'); // Varsayılan dil
     this.currentLangs = this.translate.currentLang
+  }
+
+  ngOnInit(): void {
+    this.userSubscription = this.authService.currentUser.subscribe((user) => {
+      this.currentUser = user
+    })
   }
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
@@ -33,11 +42,7 @@ export class NavbarComponent implements OnInit{
     this.translate.use(lang); // Dili değiştirir
     this.isDropdownOpen = false; // Seçim sonrası dropdown'ı kapatır
   }
-  ngOnInit(): void {
-    this.userSubscription = this.authService.currentUser.subscribe((user) => {
-      this.currentUser = user
-    })
-  }
+  
 
   logout(){
     this.authService.logout()
@@ -45,7 +50,7 @@ export class NavbarComponent implements OnInit{
   }
 
   getUserImage(image:any){
-    return this.authService.getProfileImage(image)
+    return this.userService.getProfileImage(image)
   }
 
   getCurrentLanguageFlag() {

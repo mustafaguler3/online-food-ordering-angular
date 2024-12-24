@@ -3,9 +3,10 @@ import { RestaurantService } from '../services/restaurant.service';
 import { Restaurant } from 'src/app/shared/models/restaurant';
 
 @Component({
-  selector: 'app-restaurant-list',
-  templateUrl: './restaurant-list.component.html',
-  styleUrls: ['./restaurant-list.component.css']
+    selector: 'app-restaurant-list',
+    templateUrl: './restaurant-list.component.html',
+    styleUrls: ['./restaurant-list.component.css'],
+    standalone: false
 })
 export class RestaurantListComponent implements OnInit{
 

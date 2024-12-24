@@ -7,9 +7,10 @@ import { User } from 'src/app/shared/models/user';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-saved-address',
-  templateUrl: './saved-address.component.html',
-  styleUrls: ['./saved-address.component.css']
+    selector: 'app-saved-address',
+    templateUrl: './saved-address.component.html',
+    styleUrls: ['./saved-address.component.css'],
+    standalone: false
 })
 export class SavedAddressComponent implements OnInit{
 

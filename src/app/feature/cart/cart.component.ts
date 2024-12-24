@@ -4,9 +4,10 @@ import { AuthService } from 'src/app/core/services/auth.service';
 import { User } from 'src/app/shared/models/user';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css'],
+    selector: 'app-cart',
+    templateUrl: './cart.component.html',
+    styleUrls: ['./cart.component.css'],
+    standalone: false
 })
 export class CartComponent {
   isLoggedIn: boolean = false;

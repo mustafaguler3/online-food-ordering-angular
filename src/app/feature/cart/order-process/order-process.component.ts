@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-order-process',
-  templateUrl: './order-process.component.html',
-  styleUrls: ['./order-process.component.css']
+    selector: 'app-order-process',
+    templateUrl: './order-process.component.html',
+    styleUrls: ['./order-process.component.css'],
+    standalone: false
 })
 export class OrderProcessComponent {
   @Input() currentStep: 'account' | 'address' | 'payment' | 'confirm' = 'account';
